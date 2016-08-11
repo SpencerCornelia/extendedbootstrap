@@ -4,7 +4,7 @@
 
 .body-content {
 	margin-left: 14em;
-	margin-top: 2.5em;
+	margin-top: 0.5em;
 	width: 85%;
 }
 
@@ -40,4 +40,41 @@ header a:hover {
 	margin-top: 2em;
 	margin-left: 1em;
 	padding: 0em;
+}
+
+.pdsa-sn-wrapper li {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+
+.pdsa-sn-wrapper ul li a {
+	color: #999999;
+	text-decoration: none;
+	padding: 0.5em;
+}
+
+.pdsa-sn-wrapper ul li a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.pdsa-sn-wrapper ul li a:active, .pdsa-sn-wrapper ul li a:focus {
+	text-decoration: none;
+	outline: none;
+	color: red;
+}
+
+.pdsa-sn-wrapper ul .pdsa-sn-brand {
+	margin-left: -0.5em;
+	font-size: large;
+	color: white;
+}
+
+.pdsa-sn-wrapper ul .pdsa-sn-brand a {
+	color: white;
+}
+
+.pdsa-sn-wrapper ul .pdsa-sn-brand a:hover {
+	color: lightblue;
+	background: none;
 }
