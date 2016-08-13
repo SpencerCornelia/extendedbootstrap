@@ -7,40 +7,7 @@
 	<link href="pdsa-summary-block.css" rel="stylesheet" />
 	<link href="pdsa-readme-box.css" rel="stylesheet" />
 	<link href="site.css" rel="stylesheet" />
-
-<style>
-.title {
-	display: block;
-	font-weight: bold;
-	font-size: 1.5em;
-}
-
-.desc {
-	display: block;
-	font-size: 1.25em;
-}
-
-.price {
-	font-size: 1.25em;
-}
-
-.panel-body {
-	min-height: 7em;
-}
-
-.btn-group .btn span,
-.btn-group .btn input[type='checkbox'] {
-	padding-top: 0.5em;
-	padding-bottom: 0em;
-}
-
-.total-area {
-	margin-top: 2em;
-	font-weight: bold;
-	text-align: right;
-}
-
-</style>
+	<link href="pdsa-product-selector.css" rel="stylesheet" />
 
 </head>
 <body class="notransition">
@@ -134,7 +101,7 @@
 							<input type="radio" />Selected
 						</label>	
 						<label class="btn btn-default">
-							<span class="glyphicon glyphicon-unchecked"></span>							
+							<span class="glyphicon glyphicon-unchecked"></span>			
 							<input type="radio" />Unselected
 						</label>	
 					</div>	
@@ -236,54 +203,14 @@
 	<script src="jquery-3.1.0.min.js"></script>
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="pdsa-common.js"></script>	
+	<script src="pdsa-numberformat.js"></script>
+	<script src="pdsa-product-selector.js"></script>
 
 	<script>
-
-	var checkOptions = {
-		id: "",
-		checkedGlyph: "glyphicon-ok-circle",
-		uncheckedGlyph: "glyphicon-unchecked",
-		checkedBtnClass: "btn-success",
-		uncheckedBtnClass: "btn-primary",
-		checkedText: "Selected",
-		uncheckedText: "Not Selected"
-	}
-
 	$(document).ready(function () {
 		$("#songSelect .btn").on("click", function () {
 			ToggleRadioButtons("#songSelect", $(this));
-		});
-
-		$("[type='checkbox']").on("change", function () {
-				if ($(this).prop('checked')) {
-					setChecked($(this));
-				} else {
-					setUnChecked($(this));
-				}
-			});
-
-		var checked = $(checkOptions.id + " .btn-group input:checked");
-		setChecked(checked);
-
-
-		function setChecked(ct1) {
-					$(ct1).prev()
-					.removeClass(checkOptions.uncheckedGlyph)
-					.addClass(checkOptions.checkedGlyph);
-					$(ct1).parent()
-					.removeClass(checkOptions.uncheckedGlyph)
-					.addClass(checkOptions.checkedBtnClass);
-					$(ct1).next().text(checkOptions.checkedText);			
-		}
-		function setUnChecked(ct1) {
-					$(ct1).prev()
-					.removeClass(checkOptions.checkedGlyph)
-					.addClass(checkOptions.uncheckedGlyph);
-					$(ct1).parent()
-					.removeClass(checkOptions.checkedBtnClass)
-					.addClass(checkOptions.uncheckedBtnClass);
-					$(ct1).next().text(checkOptions.uncheckedText);			
-		}				
+		});				
 
 		function ToggleRadioButtons(groupName, current) {
 			$(groupName + " .glyphicon-record")
@@ -295,7 +222,6 @@
 			.addClass("glyphicon-record")
 		}
 	})
-
 	</script>	
 </body>
 </html>
