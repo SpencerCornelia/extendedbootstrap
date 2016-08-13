@@ -1,3 +1,33 @@
+.container {
+	width: 100%;
+}
+
+.body-content {
+	margin-left: 14em;
+	margin-top: 0.5em;
+	width: 85%;
+	transition: margin-left 0.3s linear;
+	-moz-transition: margin-left 0.3s linear;
+	-webkit-transition: margin-left 0.3s linear;
+}
+
+header {
+	padding: 0.7em;
+	background-color: gray;
+	color: white;
+	font-size: large;
+}
+
+header a {
+	background-color: gray;
+	color: white;
+	text-decoration: none;
+}
+
+header a:hover {
+	text-decoration: none;
+}
+
 .pdsa-sn-wrapper {
 	position: absolute;
 	top: 3.6em;
@@ -8,6 +38,7 @@
 	transition: left 0.3s linear;
 	-moz-transition: left 0.3s linear;
 	-webkit-transition: left 0.3s linear;
+
 }
 
 .pdsa-sn-wrapper ul {

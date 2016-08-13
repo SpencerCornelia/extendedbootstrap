@@ -1,0 +1,52 @@
+.container {
+	width: 100%;
+}
+
+.body-content {
+	margin-left: 14em;
+	margin-top: 0.5em;
+	width: 85%;
+	transition: margin-left 0.3s linear;
+	-moz-transition: margin-left 0.3s linear;
+	-webkit-transition: margin-left 0.3s linear;
+}
+
+header {
+	padding: 0.7em;
+	background-color: gray;
+	color: white;
+	font-size: large;
+}
+
+header a {
+	background-color: gray;
+	color: white;
+	text-decoration: none;
+}
+
+header a:hover {
+	text-decoration: none;
+}
+
+.notransition * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-o-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+.checkbox .btn,
+.checkbox-inline .btn {
+	padding-left: 2em;
+	min-width: 7em;
+}
+
+.checkbox-inline {
+	margin-left: -1.5em;
+}
+
+.checkbox label,
+.checkbox-inline label {
+	text-align: left;
+}

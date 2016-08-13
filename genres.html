@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Music Site</title>
+	<title>Genres</title>
 	<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="leftSidebar.css" rel="stylesheet" />
 	<link href="pdsa-summary-block.css" rel="stylesheet" />
 	<link href="pdsa-readme-box.css" rel="stylesheet" />
 	<link href="site.css" rel="stylesheet" />
+
 
 </head>
 <body class="notransition">
@@ -87,95 +88,103 @@
 
 	<div class="container body-content">
 		<div class="row">
-			<div class="col-xs-12 col-sm-4">
-				<div class="pdsa-summary-block pdsa-summary-block-primary">
-					<div class="summary-background">
-						<i class="glyphicon glyphicon-globe"></i>
+			<div class="text-center col-xs-12">
+				<h3>Display the following genres...</h3>
+				<div class="well well-sm">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>
+							<input type="checkbox" />Jazz
+						</label>
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>							
+							<input type="checkbox" />Country
+						</label>	
+						<label class="btn btn-default">
+							<span class="glyphicon glyphicon-unchecked"></span>							
+							<input type="checkbox" />Rock
+						</label>	
+					</div>	
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4">				
+				<div class="pdsa-readme-box pdsa-readme-box-primary">
+					<div class="readme-header">
+						<i class="glyphicon glyphicon-music"></i>
 					</div>
-					<div class="summary-body">
-						<div class="summary-line-1">14</div>
-						<div class="summary-line-2">Genres</div>
+					<div class="readme-body">
+						<h1>Jazz</h1>
+						<p>Jazz is a genre of music that originated in the late 19th century.</p>
 					</div>
-					<div class="summary-footer">
-						<a href="Genres.html">View Genres
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</a>
+					<div class="readme-footer">
+						<a href="jazz.html">+ See All Jazz Songs..</a>
 					</div>
-				</div>				
+				</div>						
 			</div>
 			<div class="col-xs-12 col-sm-4">
-				<div class="pdsa-summary-block pdsa-summary-block-success">
-					<div class="summary-background">
-						<i class="glyphicon glyphicon-list-alt"></i>
+				<div class="pdsa-readme-box pdsa-readme-box-success">
+					<div class="readme-header">
+						<i class="glyphicon glyphicon-music"></i>
 					</div>
-					<div class="summary-body">
-						<div class="summary-line-1">5</div>
-						<div class="summary-line-2">Playlists</div>
+					<div class="readme-body">
+						<h1>Country</h1>
+						<p>Country music is American popular music that originated in the Souf.</p>
 					</div>
-					<div class="summary-footer">
-						<a href="#">View Playlists
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</a>
+					<div class="readme-footer">
+						<a href="country.html">+ See all Country Songs..</a>
 					</div>
-				</div>				
+				</div>			
 			</div>			
 		</div>
 		<div class="row">
-			<div class="col-xs-12 col-sm-4">
-				<div class="pdsa-summary-block pdsa-summary-block-info">
-					<div class="summary-background">
+			<div class="col-xs-12 col-sm-4">	
+				<div class="pdsa-readme-box pdsa-readme-box-info">
+					<div class="readme-header">
 						<i class="glyphicon glyphicon-music"></i>
 					</div>
-					<div class="summary-body">
-						<div class="summary-line-1">2143</div>
-						<div class="summary-line-2">Songs</div>
+					<div class="readme-body">
+						<h1>Rock</h1>
+						<p>Rock is a genre of music that can be summed up with a lot of sweaty hair.</p>
 					</div>
-					<div class="summary-footer">
-						<a href="#">All Songs
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</a>
+					<div class="readme-footer">
+						<a href="rock.html">+ See all Rock Songs..</a>
 					</div>
-				</div>				
+				</div>						
 			</div>
-			<div class="col-xs-12 col-sm-4">
-				<div class="pdsa-summary-block pdsa-summary-block-danger">
-					<div class="summary-background">
-						<i class="glyphicon glyphicon-download"></i>
-					</div>
-					<div class="summary-body">
-						<div class="summary-line-1">1</div>
-						<div class="summary-line-2">Download</div>
-					</div>
-					<div class="summary-footer">
-						<a href="#">Get Downloads
-							<i class="glyphicon glyphicon-chevron-right"></i>
-						</a>
-					</div>
-				</div>				
+			<div class="col-xs-12 col-sm-4">				
 			</div>			
-		</div>
-	<div class="row">
-		<div class="col-xs-12 col-sm-8">
-			<div class="pdsa-readme-box pdsa-readme-box-primary">
-				<div class="readme-header">
-					<i class="glyphicon glyphicon-music"></i>
-				</div>
-				<div class="readme-body">
-					<h1>Free Music</h1>
-					<p>Each day we have a free song selected for you.</p>
-				</div>
-				<div class="readme-footer">
-					<a href="#">+ See My Song..</a>
-				</div>
-			</div>
-		</div>
-	</div>				
+		</div>				
 	</div>
 
 
 	<script src="jquery-3.1.0.min.js"></script>
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-	<script src="pdsa-common.js"></script>		
+	<script src="pdsa-common.js"></script>	
+
+	<script>
+		$(document).ready(function () {
+			$("[type='checkbox']").on("change", function () {
+				if ($(this).prop('checked')) {
+					$(this).prev()
+					.removeClass("glyphicon-unchecked")
+					.addClass("glyphicon-ok-circle");
+				} else {
+					$(this).prev()
+					.removeClass("glyphicon-ok-cirlce")
+					.addClass("glyphicon-unchecked");
+				}
+			});
+
+			$("input:checked").prev()
+				.removeClass("glyphicon-unchecked")
+				.addClass("glyphicon-ok-cirlce");
+			$("input:checked").parent()
+				.addClass("active");
+		});
+	</script>
+
 </body>
 </html>
 
