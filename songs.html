@@ -8,6 +8,40 @@
 	<link href="pdsa-readme-box.css" rel="stylesheet" />
 	<link href="site.css" rel="stylesheet" />
 
+<style>
+.title {
+	display: block;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.desc {
+	display: block;
+	font-size: 1.25em;
+}
+
+.price {
+	font-size: 1.25em;
+}
+
+.panel-body {
+	min-height: 7em;
+}
+
+.btn-group .btn span,
+.btn-group .btn input[type='checkbox'] {
+	padding-top: 0.5em;
+	padding-bottom: 0em;
+}
+
+.total-area {
+	margin-top: 2em;
+	font-weight: bold;
+	text-align: right;
+}
+
+</style>
+
 </head>
 <body class="notransition">
 	<div class="container">
@@ -106,8 +140,97 @@
 					</div>	
 				</div>
 			</div>			
+		</div>
+
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Select Albums to Purchase</h3>
+			</div>
+			<div class="col-sm-5 total-area">
+				<span>Total: </span>
+				<span id="total">$0.00</span>
+			</div>
 		</div>			
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-body">
+						<span class="title">Southern Style</span>
+						<span class="desc">Darius Rucker</span>
+						<span class="price">10.00</span>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary">
+								<span class="glyphicon glyphicon-unchecked"></span>
+								<input type="checkbox" id="chk1" name="products">
+								<label for="chk1">Not Selected</label>
+							</label>	
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-body">
+						<span class="title">Based on a True Story</span>
+						<span class="desc">Blake Shelton</span>
+						<span class="price">13.00</span>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary">
+								<span class="glyphicon glyphicon-unchecked"></span>
+								<input type="checkbox" id="chk1" name="products">
+								<label for="chk1">Not Selected</label>
+							</label>	
+						</div>
+					</div>	
+				</div>	
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-body">
+						<span class="title">Southern Style</span>
+						<span class="desc">Darius Rucker</span>
+						<span class="price">10.00</span>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary">
+								<span class="glyphicon glyphicon-unchecked"></span>
+								<input type="checkbox" id="chk2" name="products">
+								<label for="chk2">Not Selected</label>
+							</label>	
+						</div>
+					</div>	
+				</div>	
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-warning">
+					<div class="panel-body">
+						<span class="title">Based on a True Story</span>
+						<span class="desc">Blake Shelton</span>
+						<span class="price">13.00</span>
+					</div>
+					<div class="panel-footer">
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary">
+								<span class="glyphicon glyphicon-unchecked"></span>
+								<input type="checkbox" id="chk2" name="products">
+								<label for="chk2">Not Selected</label>
+							</label>	
+						</div>
+					</div>	
+				</div>	
+			</div>			
+		</div>					
 	</div>
+
+
 
 
 	<script src="jquery-3.1.0.min.js"></script>
@@ -115,10 +238,52 @@
 	<script src="pdsa-common.js"></script>	
 
 	<script>
+
+	var checkOptions = {
+		id: "",
+		checkedGlyph: "glyphicon-ok-circle",
+		uncheckedGlyph: "glyphicon-unchecked",
+		checkedBtnClass: "btn-success",
+		uncheckedBtnClass: "btn-primary",
+		checkedText: "Selected",
+		uncheckedText: "Not Selected"
+	}
+
 	$(document).ready(function () {
 		$("#songSelect .btn").on("click", function () {
 			ToggleRadioButtons("#songSelect", $(this));
 		});
+
+		$("[type='checkbox']").on("change", function () {
+				if ($(this).prop('checked')) {
+					setChecked($(this));
+				} else {
+					setUnChecked($(this));
+				}
+			});
+
+		var checked = $(checkOptions.id + " .btn-group input:checked");
+		setChecked(checked);
+
+
+		function setChecked(ct1) {
+					$(ct1).prev()
+					.removeClass(checkOptions.uncheckedGlyph)
+					.addClass(checkOptions.checkedGlyph);
+					$(ct1).parent()
+					.removeClass(checkOptions.uncheckedGlyph)
+					.addClass(checkOptions.checkedBtnClass);
+					$(ct1).next().text(checkOptions.checkedText);			
+		}
+		function setUnChecked(ct1) {
+					$(ct1).prev()
+					.removeClass(checkOptions.checkedGlyph)
+					.addClass(checkOptions.uncheckedGlyph);
+					$(ct1).parent()
+					.removeClass(checkOptions.checkedBtnClass)
+					.addClass(checkOptions.uncheckedBtnClass);
+					$(ct1).next().text(checkOptions.uncheckedText);			
+		}				
 
 		function ToggleRadioButtons(groupName, current) {
 			$(groupName + " .glyphicon-record")
