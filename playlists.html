@@ -7,18 +7,7 @@
 	<link href="pdsa-summary-block.css" rel="stylesheet" />
 	<link href="pdsa-readme-box.css" rel="stylesheet" />
 	<link href="site.css" rel="stylesheet" />
-
-<style>
-
-.panel .panel-heading .panel-title a {
-	text-decoration: none;
-}
-
-.pdsa-panel-toggle {
-	float: right;
-}
-
-</style>
+	<link href="pdsa-collapsers.css" rel="stylesheet" />
 
 </head>
 <body class="notransition">
@@ -103,7 +92,7 @@
 	<div class="container body-content">
 		<div class="row">
 			<div class="col-xs-12">	
-				<div class="panel-group" id="playlists">
+				<div class="panel-group" id="playlists" data-pdsa-collapser-name="playlists" data-pdsa-collapser-open="glyphicon glyphicon-minus" data-pdsa-collapser-close="glyphicon glyphicon-plus">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h1 class="panel-title">
@@ -156,37 +145,8 @@
 	<script src="jquery-3.1.0.min.js"></script>
 	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<script src="pdsa-common.js"></script>	
+	<script src="pdsa-collapsers.js"></script>	
 
-	<script>
-
-	$(document).ready(function () {
-		$("#playlists .pdsa-panel-toggle")
-		.addClass("glyphicon glyphicon-plus");
-
-		var list = $("#playlists .in");
-		for (var i=0; i<list.length; i++) {
-			$("a[href='#" + $(list[i]).attr("id") + "']")
-			.next(".pdsa-panel-toggle")
-			.removeClass("glyphicon-plus")
-			.addClass("glyphicon-minus");
-		}
-
-		$("#playlists").on("hide.bs.collapse", function (e) {
-			$("#" + e.target.id).prev()
-			.find(".pdsa-panel-toggle")
-			.removeClass("glyphicon-minus")
-			.addClass("glyphicon-plus");
-		});
-
-		$("#playlists").on("show.bs.collapse", function (e) {
-			$("#" + e.target.id).prev()
-			.find(".pdsa-panel-toggle")
-			.removeClass("glyphicon-plus")
-			.addClass("glyphicon-minus");
-		});		
-	})
-
-	</script>
 
 </body>
 </html>
