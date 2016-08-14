@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Playlists</title>
+	<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="leftSidebar.css" rel="stylesheet" />
+	<link href="pdsa-summary-block.css" rel="stylesheet" />
+	<link href="pdsa-readme-box.css" rel="stylesheet" />
+	<link href="site.css" rel="stylesheet" />
+
+<style>
+
+.panel .panel-heading .panel-title a {
+	text-decoration: none;
+}
+
+.pdsa-panel-toggle {
+	float: right;
+}
+
+</style>
+
+</head>
+<body class="notransition">
+	<div class="container">
+		<header>
+			<a href="default.html">My Tunes</a>
+		</header>
+		<nav id="sideNavParent" class="pdsa-sn-wrapper">
+			<ul>
+				<li class="pdsa-sn-brand">
+					<a href="default.html" class="visible-sm visible-md visible-lg">Music</a>
+				</li>
+				<li>
+					<a href="default.html">
+					<span class="visible-sm visible-md visible-lg">Home</span>
+					<i class="glyphicon glyphicon-home visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulGenres">
+						<span class="visible-sm visible-md visible-lg">Genres&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-globe visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+					<ul id="ulGenres" class="collapse" data-parent="#sideNavParent">
+						<li>
+							<a href="#">All Genres</a>
+						</li>
+						<li>
+							<a href="jazz.html">Jazz</a>
+						</li>
+						<li>
+							<a href="#">Country</a>
+						</li>
+						<li>
+							<a href="#">Rock</a>
+						</li>																		
+					</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#" data-toggle="collapse" data-target="#ulPlaylists">
+						<span class="visible-sm visible-md visible-lg">Playlists&nbsp;<b class="caret"></b></span>
+						<i class="glyphicon glyphicon-list-alt visible-xs"></i>
+					</a>
+					<div class="visible-sm visible-md visible-lg">
+					<ul id="ulPlaylists" class="collapse" data-parent="#sideNavParent">
+						<li>
+							<a href="#">All Playlists</a>
+						</li>
+						<li>
+							<a href="#">My Top Rated</a>
+						</li>
+						<li>
+							<a href="#">Top Country</a>
+						</li>
+						<li>
+							<a href="#">Top Classic Rock</a>
+						</li>																		
+					</ul>
+					</div>					
+				</li>
+				<li>
+					<a href="songs.html">
+						<span class="visible-sm visible-md visible-lg">Songs</span>
+						<i class="glyphicon glyphicon-music visible-xs"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="visible-sm visible-md visible-lg">Downloads</span>
+						<i class="glyphicon glyphicon-download visible-xs"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+
+
+<!-- ACCORDION IN BODY CONTENT  -->
+	<div class="container body-content">
+		<div class="row">
+			<div class="col-xs-12">	
+				<div class="panel-group" id="playlists">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title">
+								<a href="#mytoprated" data-toggle="collapse" data-parent="#playlists">My Top Rated</a>				
+								<a href="#mytoprated" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
+							</h1>
+						</div>
+						<div id="mytoprated" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<h2>My Top Rated</h2>
+								<p>My top rated songs are all in this playlist.</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title">
+								<a href="#topcountry" data-toggle="collapse" data-parent="#playlists">Top Country</a>				
+								<a href="#topcountry" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
+							</h1>
+						</div>
+						<div id="topcountry" class="panel-collapse collapse">
+							<div class="panel-body">
+								<h2>Top Country</h2>
+								<p>All of my favorite country songs.</p>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h1 class="panel-title">
+								<a href="#topclassicrock" data-toggle="collapse" data-parent="#playlists">Top Rock</a>				
+								<a href="#topclassicrock" data-toggle="collapse" data-parent="#playlists" class="pdsa-panel-toggle"></a>
+							</h1>
+						</div>
+						<div id="topclassicrock" class="panel-collapse collapse">
+							<div class="panel-body">
+								<h2>Top Classic Rock</h2>
+								<p>All of my favorite songs that rock.</p>
+							</div>
+						</div>
+					</div>										
+				</div>	
+
+			</div>					
+		</div>			
+	</div>
+
+
+	<script src="jquery-3.1.0.min.js"></script>
+	<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="pdsa-common.js"></script>	
+
+	<script>
+
+	$(document).ready(function () {
+		$("#playlists .pdsa-panel-toggle")
+		.addClass("glyphicon glyphicon-plus");
+
+		var list = $("#playlists .in");
+		for (var i=0; i<list.length; i++) {
+			$("a[href='#" + $(list[i]).attr("id") + "']")
+			.next(".pdsa-panel-toggle")
+			.removeClass("glyphicon-plus")
+			.addClass("glyphicon-minus");
+		}
+
+		$("#playlists").on("hide.bs.collapse", function (e) {
+			$("#" + e.target.id).prev()
+			.find(".pdsa-panel-toggle")
+			.removeClass("glyphicon-minus")
+			.addClass("glyphicon-plus");
+		});
+
+		$("#playlists").on("show.bs.collapse", function (e) {
+			$("#" + e.target.id).prev()
+			.find(".pdsa-panel-toggle")
+			.removeClass("glyphicon-plus")
+			.addClass("glyphicon-minus");
+		});		
+	})
+
+	</script>
+
+</body>
+</html>
+
